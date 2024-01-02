@@ -1,100 +1,33 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    background: url("https://i.pinimg.com/originals/a9/23/1f/a9231f446cce273a55feac4706f43f39.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.content {
-    margin: 0;
-    padding: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 25px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(70, 70, 70, 0.7);
-    height: 200px;
-    width: 450px;
-    border-radius: 0px;
-    border: 1px #333 solid;
-    margin: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.card h2 {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin-left: 10px;
-    color: #AAA;
-    font-size: 25px;
-}
-
-.card-gun {
-    max-width: 380px;
-    max-height: 160px;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    margin-right: 10px;
-}
-
-.card-buddies {
-    position: absolute;
-    max-height: 65px;
-    max-width: 65px;
-    left: 0;
-    bottom: 0;
-    margin-left: 15px;
-    margin-bottom: 40px;
-}
-
-.colum-title h2 {
-    color: white;
-    font-size: 35px;
-    padding: 0;
-    margin: 0;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.row {
-    align-items: center;
-    justify-content: center;
-}
-
-.colum-title {
-    align-items: center;
-    text-align: center;
-}
-
-.card-player {
+.banner {
+    position: relative;
+    height: 60vh;
+    width: 90%;
     background: url("https://media.valorant-api.com/playercards/2950e0cb-414f-09b6-0dbe-45b3595d82e0/largeart.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 1000px;
-    width: 450px;
-    border-radius: 0px;
-    border: 1px #333 solid;
-    margin: 5px;
+}
+
+.banner::before,
+.banner::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    height: 10vw;
+    width: 50%;
+    z-index: -1;
+}
+
+.banner::before {
+    left: 0;
+    transform: skewY(40deg);
+    transform-origin: bottom left;
+}
+
+.banner::after {
+    right: 0;
+    transform: skewY(-40deg);
+    transform-origin: bottom right;
 }
