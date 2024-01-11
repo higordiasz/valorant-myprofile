@@ -1,33 +1,221 @@
-.banner {
-    position: relative;
-    height: 60vh;
-    width: 90%;
-    background: url("https://media.valorant-api.com/playercards/2950e0cb-414f-09b6-0dbe-45b3595d82e0/largeart.png") no-repeat center center;
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: url("https://i.pinimg.com/originals/a9/23/1f/a9231f446cce273a55feac4706f43f39.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    user-select: none;
 }
 
-.banner::before,
-.banner::after {
-    content: "";
+.content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    user-select: none;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18vw;
+    height: 100vh;
+    user-select: none;
+}
+
+.title {
+    display: flex;
+    width: 90%;
+    height: 8vh;
+    align-items: end;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+.title h2 {
+    margin: 0;
+    user-select: none;
+    padding: 0;
+    color: white;
+    font-size: 1.3vw;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.card {
+    display: flex;
+    user-select: none;
+    flex-direction: column;
+    width: 90%;
+    height: 14vh;
+    background-color: rgba(70, 70, 70, 0.5);
+    margin-top: 1vh;
+    text-align: start;
+    border: 1px solid rgba(150, 150, 150, 0.8)
+}
+
+.card h2 {
+    position: relative;
+    user-select: none;
+    top: 11vh;
+    left: 0.5vw;
+    font-weight: 400;
+}
+
+.card-gun {
+    width: 16.5vw;
+    user-select: none;
+    height: 11vh;
     position: absolute;
-    background-color: #fff;
-    bottom: 0;
-    height: 10vw;
-    width: 50%;
-    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.banner::before {
-    left: 0;
-    transform: skewY(40deg);
-    transform-origin: bottom left;
+.card-gun img {
+    width: 90%;
+    height: 80%;
+    user-select: none;
+    object-fit: contain;
+    position: relative;
+    top: 0.8vh;
 }
 
-.banner::after {
-    right: 0;
-    transform: skewY(-40deg);
-    transform-origin: bottom right;
+.card-buddies {
+    width: 2.5vw;
+    height: 4.5vh;
+    user-select: none;
+    position: absolute;
+}
+
+.card-buddies img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    object-fit: contain;
+    position: relative;
+    top: 6.7vh;
+    left: 0.6vw;
+}
+
+.card h2 {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: rgb(200, 200, 200);
+    font-size: 0.9vw;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.triangulo-que-n-uso-agr {
+    --triangle-height: 5vh;
+    user-select: none;
+    /* you can change this */
+    --mask: linear-gradient(#000, #000) 0 0/100% calc(100% - var(--triangle-height)) no-repeat,
+        linear-gradient(to top right, transparent 49.5%, #000 50% 100%) 0 100%/50% var(--triangle-height) no-repeat,
+        linear-gradient(to top left, transparent 49.5%, #000 50% 100%) 100% 100%/50% var(--triangle-height) no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.banner {
+    margin-top: 1vh;
+    position: relative;
+    user-select: none;
+    height: 80vh;
+    width: 85%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 80%, transparent 100%);
+}
+
+.name {
+    position: relative;
+    user-select: none;
+    width: 85%;
+    background-color: rgba(252, 252, 120, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: -27vh;
+}
+
+.name h2 {
+    margin: 0;
+    user-select: none;
+    padding: 0;
+    color: rgb(24, 23, 23);
+    font-size: 1.1vw;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.player_title {
+    position: relative;
+    width: 85%;
+    user-select: none;
+    background-color: rgba(20, 20, 20, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: -27vh;
+}
+
+.player_title h2 {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: rgb(245, 245, 245);
+    font-size: 0.9vw;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.board_elo {
+    height: 10vh;
+    width: 10vh;
+    user-select: none;
+    background: rgba(20, 20, 20, 0.8);
+    /* Rotação */
+    transform: rotate(-45deg);
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board_elo img {
+    height: 9vh;
+    user-select: none;
+    width: 9vh;
+    transform: rotate(45deg);
+}
+
+.level_border {
+    height: 3.5vh;
+    width: 9vh;
+    user-select: none;
+    position: absolute;
+    top: 8.5vh;
+}
+
+.level_border_text {
+    position: absolute;
+    font-weight: 400;
+    top: 8.9vh;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    font-size: 0.9vw;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
