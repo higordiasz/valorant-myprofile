@@ -1,62 +1,151 @@
+import Assets from "./PublicContentCatalog.js";
 const valorant = {};
 
-valorant.getAllWeapons = async () => {
-    let send = await fetch("https://valorant-api.com/v1/weapons", {
-        method: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-    })
-        .then(function (res) {
-            return res.json();
-        })
-        .catch(function (err) {
-            console.log(err)
-            return null;
-        })
-    if (send != null) {
-        let guns = {
-            Heavy: [],
-            Rifle: [],
-            Shotgun: [],
-            Sniper: [],
-            Sidearm: [],
-            SMG: [],
-            Melee: []
-        }
-        let aux = send.data;
-        for (let i = 0; i < aux.length; i++) {
-            let arm = {
-                name: aux[i].displayName,
-                uuid: aux[i].uuid,
-                display: aux[i].displayIcon
+valorant.getWeaponsList = () => {
+    let weaponsCategory = ["Melee", "Sidearm", "Heavy", "Rifle", "Shotgun", "Sniper", "SMG", "Shotgun"];
+    let list = {
+        Melee: [],
+        Sidearm: [],
+        Heavy: [],
+        Rifle: [],
+        Shotgun: [],
+        Sniper: [],
+        SMG: [],
+        Shotgun: []
+    };
+    for (let i = 0; i < Assets.weapons.length; i++) {
+        if (weaponsCategory.includes(Assets.weapons[i].category)) {
+            let weapom = {
+                name: Assets.weapons[i].name.defaultText,
+                localizedByCulture: Assets.weapons[i].name.localizedByCulture,
+                category: Assets.weapons[i].category,
+                id: Assets.weapons[i].id
+            };
+            switch (Assets.weapons[i].category) {
+                case weaponsCategory[0]:
+                    list.Melee.push(weapom);
+                    break;
+                case weaponsCategory[1]:
+                    list.Sidearm.push(weapom);
+                    break;
+                case weaponsCategory[2]:
+                    list.Heavy.push(weapom);
+                    break;
+                case weaponsCategory[3]:
+                    list.Rifle.push(weapom);
+                    break;
+                case weaponsCategory[4]:
+                    list.Shotgun.push(weapom);
+                    break;
+                case weaponsCategory[5]:
+                    list.Sniper.push(weapom);
+                    break;
+                case weaponsCategory[6]:
+                    list.SMG.push(weapom);
+                    break;
+                case weaponsCategory[7]:
+                    list.Shotgun.push(weapom);
+                    break;
+                default:
+                    break;
             }
-            if (aux[i].category.endsWith("Heavy"))
-                guns.Heavy.push(arm);
-            else
-                if (aux[i].category.endsWith("Rifle"))
-                    guns.Rifle.push(arm);
-                else
-                    if (aux[i].category.endsWith("Shotgun"))
-                        guns.Shotgun.push(arm);
-                    else
-                        if (aux[i].category.endsWith("Sidearm"))
-                            guns.Sidearm.push(arm);
-                        else
-                            if (aux[i].category.endsWith("Sniper"))
-                                guns.Sniper.push(arm);
-                            else
-                                if (aux[i].category.endsWith("SMG"))
-                                    guns.SMG.push(arm);
-                                else
-                                    if (aux[i].category.endsWith("Melee"))
-                                        guns.Melee.push(arm);
         }
-        return guns;
-    } else {
-        return null;
     }
+    return list;
+}
+
+valorant.getUsageWeaponsList = () => {
+    let classicID = "C5DE005C-4BDC-26A7-A47D-C295EAAAE9D8";
+    let weaponsCategory = ["Melee", "Sidearm", "Heavy", "Rifle", "Shotgun", "Sniper", "SMG", "Shotgun"];
+    let weaponsNames = ["Melee", "Classic", "Frenzy", "Ghost", "Sheriff", "Shorty", "Odin", "Ares", "Vandal", "Bulldog", "Phantom", "Guardian", "Judge", "Bucky", "Operator", "Marshal", "Spectre", "Stinger", "Outlaw"];
+    let list = {
+        Melee: [],
+        Sidearm: [],
+        Heavy: [],
+        Rifle: [],
+        Shotgun: [],
+        Sniper: [],
+        SMG: [],
+        Shotgun: []
+    };
+    for (let i = 0; i < Assets.weapons.length; i++) {
+        if (weaponsCategory.includes(Assets.weapons[i].category) && weaponsNames.includes(Assets.weapons[i].name.defaultText)) {
+            if (Assets.weapons[i].name.defaultText == "Classic") {
+                if (Assets.weapons[i].id = classicID) {
+                    let weapom = {
+                        name: Assets.weapons[i].name.defaultText,
+                        localizedByCulture: Assets.weapons[i].name.localizedByCulture,
+                        category: Assets.weapons[i].category,
+                        id: Assets.weapons[i].id
+                    };
+                    switch (Assets.weapons[i].category) {
+                        case weaponsCategory[0]:
+                            list.Melee.push(weapom);
+                            break;
+                        case weaponsCategory[1]:
+                            list.Sidearm.push(weapom);
+                            break;
+                        case weaponsCategory[2]:
+                            list.Heavy.push(weapom);
+                            break;
+                        case weaponsCategory[3]:
+                            list.Rifle.push(weapom);
+                            break;
+                        case weaponsCategory[4]:
+                            list.Shotgun.push(weapom);
+                            break;
+                        case weaponsCategory[5]:
+                            list.Sniper.push(weapom);
+                            break;
+                        case weaponsCategory[6]:
+                            list.SMG.push(weapom);
+                            break;
+                        case weaponsCategory[7]:
+                            list.Shotgun.push(weapom);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            } else {
+                let weapom = {
+                    name: Assets.weapons[i].name.defaultText,
+                    localizedByCulture: Assets.weapons[i].name.localizedByCulture,
+                    category: Assets.weapons[i].category,
+                    id: Assets.weapons[i].id
+                };
+                switch (Assets.weapons[i].category) {
+                    case weaponsCategory[0]:
+                        list.Melee.push(weapom);
+                        break;
+                    case weaponsCategory[1]:
+                        list.Sidearm.push(weapom);
+                        break;
+                    case weaponsCategory[2]:
+                        list.Heavy.push(weapom);
+                        break;
+                    case weaponsCategory[3]:
+                        list.Rifle.push(weapom);
+                        break;
+                    case weaponsCategory[4]:
+                        list.Shotgun.push(weapom);
+                        break;
+                    case weaponsCategory[5]:
+                        list.Sniper.push(weapom);
+                        break;
+                    case weaponsCategory[6]:
+                        list.SMG.push(weapom);
+                        break;
+                    case weaponsCategory[7]:
+                        list.Shotgun.push(weapom);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    return list;
 }
 
 export {
