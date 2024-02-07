@@ -3,7 +3,7 @@ body {
     width: 100vw;
     overflow-y: hidden;
     overflow-x: hidden;
-    background: url("https://i.pinimg.com/originals/a9/23/1f/a9231f446cce273a55feac4706f43f39.jpg") no-repeat center center fixed;
+    background: url(../image/background.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

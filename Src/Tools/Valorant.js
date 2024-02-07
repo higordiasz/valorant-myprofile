@@ -1,8 +1,12 @@
 import Assets from "./PublicContentCatalog.js";
 const valorant = {};
 
+const classicID = "C5DE005C-4BDC-26A7-A47D-C295EAAAE9D8";
+const weaponsCategory = ["Melee", "Sidearm", "Heavy", "Rifle", "Shotgun", "Sniper", "SMG"];
+const weaponsNames = ["Melee", "Classic", "Frenzy", "Ghost", "Sheriff", "Shorty", "Odin", "Ares", "Vandal", "Bulldog", "Phantom", "Guardian", "Judge", "Bucky", "Operator", "Marshal", "Spectre", "Stinger", "Outlaw"];
+
+
 valorant.getWeaponsList = () => {
-    let weaponsCategory = ["Melee", "Sidearm", "Heavy", "Rifle", "Shotgun", "Sniper", "SMG", "Shotgun"];
     let list = {
         Melee: [],
         Sidearm: [],
@@ -55,9 +59,6 @@ valorant.getWeaponsList = () => {
 }
 
 valorant.getUsageWeaponsList = () => {
-    let classicID = "C5DE005C-4BDC-26A7-A47D-C295EAAAE9D8";
-    let weaponsCategory = ["Melee", "Sidearm", "Heavy", "Rifle", "Shotgun", "Sniper", "SMG", "Shotgun"];
-    let weaponsNames = ["Melee", "Classic", "Frenzy", "Ghost", "Sheriff", "Shorty", "Odin", "Ares", "Vandal", "Bulldog", "Phantom", "Guardian", "Judge", "Bucky", "Operator", "Marshal", "Spectre", "Stinger", "Outlaw"];
     let list = {
         Melee: [],
         Sidearm: [],
