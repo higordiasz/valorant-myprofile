@@ -5,6 +5,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import passport from "passport";
 import session from "express-session";
+import expressFlash from "express-flash";
 import { configPassport } from "./Config/Passport.js";
 import connectMongo from "./Database/Connection.js";
 import * as Tools from "./Src/Tools/index.js";
@@ -33,6 +34,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Flash
+app.use(expressFlash());
+app.use(function (req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+});
+
 app.use("/public", Express.static(path.join(__dirname, "Src/Public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Src/Views"));
@@ -49,6 +59,7 @@ app.use((req, res, next) => {
 import * as Routers from "./Src/Routers/index.js";
 app.use('/p', Routers.profileRouter);
 app.use('/login', Routers.loginRouter);
+app.use('/painel', Routers.painelRouter);
 app.use('/', (req, res, next) => {
     res.status(200).send({ message: "Teste" });
 });

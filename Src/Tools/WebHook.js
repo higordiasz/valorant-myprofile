@@ -1,8 +1,5 @@
 const webHook = {};
 
-const urlSystem = "";
-const urlUsers = "";
-const urlProfile = "";
 const colorSystem = 16711680;
 const colorUser = 16711680;
 const colorRed = 16711680;
@@ -96,7 +93,7 @@ webHook.genericMessage = async (type, message) => {
                     }
                 ]
             }
-            await sendMessage(urlSystem, content);
+            await sendMessage(process.env.URLSYSTEM, content1);
             return;
         case "company":
             break;
@@ -141,7 +138,7 @@ webHook.userLogin = async (username) => {
             }
         ]
     }
-    await sendMessage(urlUsers, content);
+    await sendMessage(process.env.URLSYSTEM, content);
 }
 
 const sendMessage = async (url, content) => {

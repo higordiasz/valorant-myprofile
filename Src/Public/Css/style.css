@@ -12,17 +12,6 @@
 
 :root {
     --white-100: #ffffff;
-    --apex-color: #e61a23;
-    --valorant-color: #f74452;
-    --cyberpunk-color: #f06414;
-    --apex-color-alpha-3: rgba(230, 25, 35, 0.3);
-    --apex-color-alpha-2: rgba(230, 25, 35, 0.2);
-    --valorant-color: #f74452;
-    --valorant-color-alpha-3: rgba(247, 68, 83, 0.3);
-    --valorant-color-alpha-2: rgba(247, 68, 83, 0.2);
-    --cyberpunk-color: #fcee0a;
-    --cyberpunk-color-alpha-3: rgba(252, 238, 10, 0.3);
-    --cyberpunk-color-alpha-2: rgba(252, 238, 10, 0.2);
     --surface: #0a080d;
 
     /* ============= SPACING ============= */
@@ -52,22 +41,22 @@
     --font-extra-bold: 800;
 }
 
-.apex {
-    --primary: var(--apex-color);
-    --primary-alpha-3: var(--apex-color-alpha-3);
-    --primary-alpha-2: var(--apex-color-alpha-2);
+.jett {
+    --primary: #08b4af;
+    --primary-alpha-3: rgba(18, 105, 116, 0.3);
+    --primary-alpha-2: rgba(18, 105, 116, 0.2);
 }
 
-.valorant {
-    --primary: var(--valorant-color);
-    --primary-alpha-3: var(--valorant-color-alpha-3);
-    --primary-alpha-2: var(--valorant-color-alpha-2);
+.neon {
+    --primary: #263b7d;
+    --primary-alpha-3: rgba(80, 254, 255, 0.3);
+    --primary-alpha-2: rgba(80, 254, 255, 0.2);
 }
 
-.cyberpunk {
-    --primary: var(--cyberpunk-color);
-    --primary-alpha-3: var(--cyberpunk-color-alpha-3);
-    --primary-alpha-2: var(--cyberpunk-color-alpha-2);
+.viper {
+    --primary: #5bd044;
+    --primary-alpha-3: rgba(30, 100, 30, 0.3);
+    --primary-alpha-2: rgba(30, 100, 30, 0.2);
 }
 
 /* =============  FLEX BOX =============*/
@@ -344,6 +333,7 @@ a {
     .app {
         grid-template-columns: 1fr;
     }
+
     .app__slider {
         width: 0 !important;
         height: 0 !important;
@@ -352,9 +342,11 @@ a {
         pointer-events: none;
         z-index: -1;
     }
+
     .app__container {
         margin-inline: clamp(var(--margin-sm), 7vw, calc(var(--margin-lg) * 2));
     }
+
     .form__title {
         font-size: calc(var(--font-size-1) * 1.7);
     }

@@ -5,7 +5,11 @@ import md5 from "md5";
 
 const profileController = {};
 
+profileController.load = async (userID) => { };
 
+profileController.loadAccount = async (account) => { };
+
+profileController.save = async (profile) => { };
 
 export {
     profileController

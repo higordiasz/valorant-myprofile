@@ -20,6 +20,10 @@ const userSchema = new Schema({
     accounLink: {
         type: Boolean,
         required: true
+    },
+    created: {
+        type: String,
+        required: true
     }
 });
 

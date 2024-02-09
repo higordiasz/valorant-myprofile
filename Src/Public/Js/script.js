@@ -3,18 +3,16 @@ const inputBorders = document.querySelectorAll(".form__input-border"),
     buttonBgFilled = document.querySelectorAll(".filled .form__button-bg"),
     loginForm = document.querySelector(".login-form"),
     signupForm = document.querySelector(".signup-form"),
-    signupBtn = loginForm.querySelector("#signup-btn"),
-    loginBtn = signupForm.querySelector("#login-btn");
+    signupBtn = loginForm.querySelector("[name='signup-btn']"),
+    loginBtn = signupForm.querySelector("[name='login-btn']");
 
 function clipBorder(element, innerEdgeSize, outerEdgeSize, borderWidth) {
     let elementWidth = element.offsetWidth,
         elementHeight = element.offsetHeight;
 
-    let clipPath = `path("M ${borderWidth},${elementHeight - innerEdgeSize - borderWidth} L ${innerEdgeSize + borderWidth},${elementHeight - borderWidth} H ${
-        elementWidth - borderWidth
-    }  V ${innerEdgeSize + borderWidth} L ${elementWidth - innerEdgeSize - borderWidth},${borderWidth}  H ${borderWidth} V ${elementHeight - innerEdgeSize - borderWidth} Z M ${
-        elementWidth - outerEdgeSize
-    },0 L ${elementWidth},${outerEdgeSize} V ${elementHeight} H ${outerEdgeSize} L 0,${elementHeight - outerEdgeSize} V 0 H ${elementWidth - outerEdgeSize} Z")`;
+    let clipPath = `path("M ${borderWidth},${elementHeight - innerEdgeSize - borderWidth} L ${innerEdgeSize + borderWidth},${elementHeight - borderWidth} H ${elementWidth - borderWidth
+        }  V ${innerEdgeSize + borderWidth} L ${elementWidth - innerEdgeSize - borderWidth},${borderWidth}  H ${borderWidth} V ${elementHeight - innerEdgeSize - borderWidth} Z M ${elementWidth - outerEdgeSize
+        },0 L ${elementWidth},${outerEdgeSize} V ${elementHeight} H ${outerEdgeSize} L 0,${elementHeight - outerEdgeSize} V 0 H ${elementWidth - outerEdgeSize} Z")`;
 
     element.style.clipPath = clipPath;
 }
@@ -79,7 +77,7 @@ const appSlider = new Swiper(".app__slider", {
 
 appSlider.on("slideChangeTransitionStart", () => {
     const app = document.querySelector(".app");
-    if (app.classList.contains("apex")) app.classList.replace("apex", "valorant");
-    else if (app.classList.contains("valorant")) app.classList.replace("valorant", "cyberpunk");
-    else if (app.classList.contains("cyberpunk")) app.classList.replace("cyberpunk", "apex");
+    if (app.classList.contains("jett")) app.classList.replace("jett", "neon");
+    else if (app.classList.contains("neon")) app.classList.replace("neon", "viper");
+    else if (app.classList.contains("viper")) app.classList.replace("viper", "jett");
 });

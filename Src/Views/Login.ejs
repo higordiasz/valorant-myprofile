@@ -15,28 +15,29 @@
     <script src="../public/js/swiper.js"></script>
     <!-- ============= JavaScript ============= -->
     <script src="../public/js/script.js" defer></script>
-    <title>Gaming Form | CodingWeb</title>
+    <title>Valorant Profile</title>
+    <link rel="icon" type="image/x-icon" href="../public/image/icon.png">
 </head>
 
 <body>
-    <div class="app apex">
+    <div class="app jett">
         <div class="app__slider swiper">
             <div class="app__slider-wrapper swiper-wrapper">
                 <div class="app__slider-slide swiper-slide">
-                    <img src="../public/image/ApexLegends.jpg" alt="Apex Legends" />
+                    <img src="../public/image/Jett.jpg" alt="Jett" />
                 </div>
                 <div class="app__slider-slide swiper-slide">
-                    <img src="../public/image/Valorant.jpg" alt="Valorant" />
+                    <img src="../public/image/Neon.jpg" alt="Neon" />
                 </div>
                 <div class="app__slider-slide swiper-slide">
-                    <img src="../public/image/CyberPunk.jpg" alt="CyberPunk" />
+                    <img src="../public/image/Viper.jpg" alt="Viper" />
                 </div>
             </div>
         </div>
         <div class="app__form-wrapper">
             <div class="app__form-container d-flex align-center">
                 <!-- ================= Login Form ================= -->
-                <form class="form login-form d-flex f-column show">
+                <form class="form login-form d-flex f-column show" autocomplete="off" action="/login" method="post">
                     <div class="form__header">
                         <p class="form__title">log in account</p>
                         <p class="form__subtitle">welcome back</p>
@@ -44,24 +45,27 @@
                     <div class="form__group d-flex f-column r-gap-1">
                         <div class="form__group d-flex f-column r-gap-2">
                             <div class="form__field">
-                                <input type="text" class="form__input" placeholder="Enter Email" />
+                                <input type="text" class="form__input" placeholder="Enter Email or Username"
+                                    autocomplete="off" name="username" />
                                 <div class="form__input-border"></div>
                             </div>
                             <div class="form__field">
-                                <input type="password" class="form__input" placeholder="Enter Password" />
+                                <input type="password" class="form__input" placeholder="Enter Password"
+                                    autocomplete="off" name="password" />
                                 <div class="form__input-border"></div>
                             </div>
                         </div>
                         <a href="#" class="form__link">forgot password?</a>
                     </div>
                     <div class="form__group d-flex f-column r-gap-2">
-                        <button class="form__button filled d-flex align-center justify-center" id="login-btn">
+                        <button class="form__button filled d-flex align-center justify-center" name="login-btn">
                             <div class="form__button-bg d-flex align-center justify-center">
                                 <p>log in</p>
                             </div>
                             <div class="form__button-border"></div>
                         </button>
-                        <button class="form__button outlined d-flex align-center justify-center" id="signup-btn">
+                        <button class="form__button outlined d-flex align-center justify-center" name="signup-btn"
+                            id="signup-form">
                             <div class="form__button-bg d-flex align-center justify-center">
                                 <p>sign up</p>
                             </div>
@@ -71,30 +75,33 @@
                 </form>
 
                 <!-- ================= Signup Form ================= -->
-                <form class="form signup-form d-flex f-column">
+                <form class="form signup-form d-flex f-column" autocomplete="off">
                     <div class="form__header">
                         <p class="form__title">sign up account</p>
-                        <p class="form__subtitle">welcome to our website</p>
+                        <p class="form__subtitle">welcome to valorant profile</p>
                     </div>
                     <div class="form__group d-flex f-column r-gap-1">
                         <div class="form__group d-flex f-column r-gap-2">
                             <div class="form__field">
-                                <input type="text" class="form__input" placeholder="Enter user name" />
+                                <input id="username" type="text" class="form__input" placeholder="Enter user name"
+                                    autocomplete="off" />
                                 <div class="form__input-border"></div>
                             </div>
                             <div class="form__field">
-                                <input type="text" class="form__input" placeholder="Enter email" />
+                                <input id="email" type="text" class="form__input" placeholder="Enter email"
+                                    autocomplete="off" />
                                 <div class="form__input-border"></div>
                             </div>
                             <div class="form__field">
-                                <input type="password" class="form__input" placeholder="Enter password" />
+                                <input id="password" type="password" class="form__input" placeholder="Enter password"
+                                    autocomplete="off" />
                                 <div class="form__input-border"></div>
                             </div>
                         </div>
                         <div class="form__group d-flex align-center c-gap-1">
                             <div class="form__check">
-                                <input type="checkbox" class="form__checkbox d-flex align-center justify-center"
-                                    id="terms" />
+                                <input id="check" type="checkbox"
+                                    class="form__checkbox d-flex align-center justify-center" id="terms" />
                                 <div class="form__checkbox-border"></div>
                             </div>
                             <label for="terms" class="form__label"> I agree the <a href="#" class="form__link">terms &
@@ -102,13 +109,15 @@
                         </div>
                     </div>
                     <div class="form__group d-flex f-column r-gap-2">
-                        <button class="form__button filled d-flex align-center justify-center" id="signup-btn">
+                        <button type="button" onclick="singup()"
+                            class="form__button filled d-flex align-center justify-center" name="signup-btn">
                             <div class="form__button-bg d-flex align-center justify-center">
                                 <p>sign up</p>
                             </div>
                             <div class="form__button-border"></div>
                         </button>
-                        <button class="form__button outlined d-flex align-center justify-center" id="login-btn">
+                        <button class="form__button outlined d-flex align-center justify-center" name="login-btn"
+                            id="login-form">
                             <div class="form__button-bg d-flex align-center justify-center">
                                 <p>log in</p>
                             </div>
@@ -119,6 +128,7 @@
             </div>
         </div>
     </div>
+    <script src="../Public//Js//signup.js"></script>
 </body>
 
 </html>

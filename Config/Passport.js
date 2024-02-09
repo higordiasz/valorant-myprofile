@@ -1,6 +1,7 @@
 import { Strategy } from "passport-local";
 import { userController } from "../Src/Models/index.js";
 import md5 from "md5";
+import { webHook } from "../Src/Tools/WebHook.js";
 
 const configPassport = function (passport) {
     passport.use(
@@ -10,6 +11,7 @@ const configPassport = function (passport) {
                 if (user != null) {
                     let md5Password = md5(password);
                     if (md5Password == user.password) {
+                        await webHook.userLogin(username);
                         return done(null, user, { message: 'Usuario conectado' });
                     } else {
                         return done(null, false, { message: 'Usuario ou senha incorreto.' });
@@ -22,6 +24,7 @@ const configPassport = function (passport) {
                 if (user != null) {
                     let md5Password = md5(password);
                     if (md5Password == user.password) {
+                        await webHook.userLogin(username);
                         return done(null, user, { message: 'Usuario conectado' });
                     } else {
                         return done(null, false, { message: 'Usuario ou senha incorreto.' });
