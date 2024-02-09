@@ -1,13 +1,13 @@
 const webHook = {};
 
-const urlSystem = "https://discord.com/api/webhooks/1189180450149761055/evt7Pzj0WABmDFWWYx4MSjBvltM17k_gjmKy7TNdeMSdmYLeWQ1LiN5aELjW6nEFsf2D";
-const urlUsers = "https://discord.com/api/webhooks/1189180760305971280/qaVOwggF5mgGvgRg-YSAFHmKqRvXI9bFsnjvks52auPxjlfRZV3Ek1QwfhH2bZdWomub";
-const urlProfile = "https://discord.com/api/webhooks/1189181005509165056/tcdVv84vJhxE_c6OdUCr6uYhNq-Xh8Dd99vXrwLLUQllhOk98ILKDnmScvXf-3RTfMPp";
+const urlSystem = "";
+const urlUsers = "";
+const urlProfile = "";
 const colorSystem = 16711680;
 const colorUser = 16711680;
 const colorRed = 16711680;
 
-const userUrl = "https://rendplus.com.br/img/defaultuser.png";
+const userUrl = "";
 const urlRendMais = "https://dias.li/";
 const authorName = "Valorant Profile";
 
@@ -73,7 +73,7 @@ webHook.systemOnline = async (dev) => {
             ]
         }
     }
-    await sendMessage(urlSystem, content);
+    await sendMessage(process.env.URLSYSTEM, content);
     return;
 }
 
