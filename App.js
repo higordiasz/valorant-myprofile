@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 
 import * as Routers from "./Src/Routers/index.js";
 app.use('/p', Routers.profileRouter);
-app.use('/login', Routers.loginRouter);
+app.use('/', Routers.loginRouter);
 app.use('/painel', Routers.painelRouter);
 app.use('/', (req, res, next) => {
     res.status(200).send({ message: "Teste" });

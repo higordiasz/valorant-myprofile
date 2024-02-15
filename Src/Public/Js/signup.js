@@ -9,7 +9,7 @@ async function singup() {
     if (!check) return alert("Deve estar de acordo com nossos termos para utilizar nosso sistema.")
     const data = { username, email, password };
     let host = window.location.protocol + '//' + window.location.host + '/';
-    let res = await fetch(`${host}login/create`, {
+    let res = await fetch(`${host}create`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
